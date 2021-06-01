@@ -3,13 +3,15 @@ import items from './data';
 const RoomContext = React.createContext();
 // RoomContext.Provider value={'hello'}
 
-export default class RoomProvider extends Component {
+ class RoomProvider extends Component {
     state={
         rooms:[],
         sortedRooms:[],
         featuredRooms:[],
         loading:true
     };
+
+    //getData
 
     componentDidMount(){
         let rooms = this.formatData(items)
@@ -53,5 +55,14 @@ export default class RoomProvider extends Component {
 }
 
 const RoomConsumer = RoomContext.consumer;
+
+export function withRoomConsumer(Component){
+    return function ConsumerWrapper(props){
+        return( <RoomConsumer>
+            {value => <Component {...props} context={value}/>}
+        </RoomConsumer>
+        );
+    };
+}
 
 export {RoomProvider, RoomConsumer, RoomContext };

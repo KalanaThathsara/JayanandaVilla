@@ -14,7 +14,7 @@ export default class Services extends Component {
             {
                 icon:<FaHiking/>,
                 title:"Places",
-                info:'dfdfdfd fdfdfdfd ddfdfdfd fdfdfdf fdfdfd fdfdfd dfdfd fdfdfd'
+                info:'kskdjskdsjs kdsjdksjd kjskdjs klfhds jfhgd kdkdgdbd kjdjdghtgd'
             },
             {
                 icon:<FaShuttleVan/>,

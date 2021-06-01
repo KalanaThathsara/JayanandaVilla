@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import FeaturedRooms from '../components/FeaturedRooms';
 
 
+
 export default function Error() {
     return( 
     <>
@@ -18,6 +19,7 @@ export default function Error() {
     </Hero>
     <Services></Services>
     <FeaturedRooms></FeaturedRooms>
+    
     </>
     )
 }
