@@ -1,0 +1,13 @@
+.back {
+    background: url("../images/defaultBcg.jpg") center/cover no-repeat;
+    height: "1000px";
+  } 
+
+.form {
+    background-color: rgba(0,0, 0, 0.3);
+    border-radius: 20px;
+    padding: 5% 0 5% 0;
+    color: white;
+    font-weight: bold;
+
+}

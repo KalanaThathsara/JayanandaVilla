@@ -7,21 +7,24 @@ export default function Room({room}) {
     const{name,slug,images,price} = room;
    
     return (
-        <article className="room">
-            <div className="img-container">
-            <img src={images[0] || defaultImg} alt="single room"></img>
-            <div className="price-top">
-                <h6>Rs:{price}</h6>
-                <p>Per Day</p>
-            </div>
-            <Link to={'/rooms/${slug}'} className="btn-primary room-link">
-                Features
-            </Link>
+        <div>
+            Roos Here
+        </div>
+        // <article className="room">
+        //     <div className="img-container">
+        //     <img src={images[0] || defaultImg} alt="single room"></img>
+        //     <div className="price-top">
+        //         <h6>Rs:{price}</h6>
+        //         <p>Per Day</p>
+        //     </div>
+        //     <Link to={'/rooms/${slug}'} className="btn-primary room-link">
+        //         Features
+        //     </Link>
 
-            </div>
-            <p className="room-info">{name}</p>
+        //     </div>
+        //     <p className="room-info">{name}</p>
             
-        </article>
+        // </article>
     );
 }
 
