@@ -23,15 +23,19 @@ function Sidebar() {
 
     return (
         <div className="sidenav">
+            <Link to="/admin/view-bookings">
+                <p onClick={onClick} id='view-books' style={(clicked == 'view-books') ? onClickStyle : s}>
+                    <span style={{marginRight: 10}}>
+                        {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+                        </span>View Bookings</p>
+            </Link>
             <Link to="/admin/addroom">
                 <p onClick={onClick} id='add-room' style={(clicked == 'add-room') ? onClickStyle : s}>
                     <span style={{marginRight: 10}}>
                         {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
                         </span>Add Room</p>
             </Link>
-
-
-            <Link to="/admin/addrehall">
+            <Link to="/admin/CustomerDetails">
                 <p onClick={onClick} id='add-rehall' style={(clicked == 'add-rehall') ? onClickStyle : s}>
                     <span style={{marginRight: 10}}>
                         {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}

@@ -13,6 +13,8 @@ import Navbar from "./Navbar";
 import RegisterCustomer from './RegisterCustomer';
 import 'react-toastify/dist/ReactToastify.css';
 import CustomerLogin from './CustomerLogin';
+import Gallery from "./Gallery";
+import BookingRoom from "./BookingRoom";
 
 function CustomerView(props) {
   return(
@@ -22,10 +24,12 @@ function CustomerView(props) {
    
     <Switch>
       
-      <Route path="/user/rooms/" component={Rooms} />
+      <Route exact path="/user/rooms/" component={Rooms} />
+      <Route path="/user/rooms/book/:id" component={BookingRoom} />
       <Route path="/user/rooms/:slug" component={SingleRoom} />
       <Route path="/user/login/" component={CustomerLogin}/>
       <Route path="/user/register/" component={RegisterCustomer}/>
+      <Route exact path="/user/gallery" component={Gallery} />
       <Route exact path="/user/" component={Home} />
       <Route component={Error} />
     </Switch>

@@ -33,13 +33,27 @@ function CustomerLogin() {
         setLoading(false)     
         
     }
+    const loginH = {
+        backgroundColor: "rgba(0,0, 0, 0.7)",
+        color: 'white',
+        marginTop: '30px',
+        padding: '5px',
+        borderRadius: "20px"
+    }
 
     return (
         <div className="back"  style={{height: '700px'}}>
             <center>
-                <Link to="/register">                                    
+                <Link to="/user/register">                                    
                     <button type="button" className="btn btn-light">Not Registered Yet? Register</button>
                 </Link>                
+            </center>
+            <center >
+                <div className="row">
+                    <div className="col-3"></div>
+                    <div className="col-6" style={loginH}><h5>Customer Login</h5> </div>
+                    <div className="col-3"></div>
+                </div>                               
             </center>
             <div className="row">
                 <div className="col-3"></div>

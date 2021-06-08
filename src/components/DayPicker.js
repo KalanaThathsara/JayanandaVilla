@@ -67,7 +67,7 @@ export default class Example extends React.Component {
                       <button className="link btn btn-danger ml-5" onClick={this.handleResetClick}>
                         Reset
                       </button>
-                      <button onClick={this.props.filterRecords} className="btn btn-success ml-3">Filter</button>
+                      {/* <button onClick={this.props.filterRecords} className="btn btn-success ml-3">Filter</button> */}
                     </>
                   )}
                 </p>

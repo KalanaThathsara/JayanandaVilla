@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import {Link} from 'react-router-dom';
 import RoomContainer from '../components/RoomContainer';
+import '../css/loginRegiser.css'
 
 import getAllRooms from '../services/getRooms'
 import ViewRoomImage from '../components/ViewRoomImage';
@@ -10,6 +11,7 @@ import ViewRoomImage from '../components/ViewRoomImage';
 const Rooms = () => {
 
     const [rooms, setrooms] = useState([])
+    
 
     useEffect(() => {
         // setIsLoading(true) 
@@ -26,22 +28,49 @@ const Rooms = () => {
 
     return (
 
-    <div className="container">
-    <h1>OUR ROOMS</h1>
+    <div className="back">
+        <div className="container">
+            <center>
+            <h1>OUR ROOMS</h1>
+            </center>
+   
     <div className="card-deck row">
         {
             rooms &&
 
             rooms.map((r) => (
-                <div className="card col-3 m-3" key={r._id}>
+                <div className="card col-3 m-5 p-3 rounded" key={r._id}>
                     {/* <img className="card-img-top" src={r.image} alt={r.roomName} /> */}
                     <ViewRoomImage roomNo={r.roomNo} height="200" width="200" />
                     <div className="card-body">
-                    <h5 className="card-title">{r.roomName}</h5>
-                    <small>{r.combinations[0].size}</small>
-                    <p className="card-text">{r.description}</p>
-                    <p className="card-text"><small className="text-muted">Rs. {r.price}</small></p>
+                        <div className="row">
+                            <div className="col-6">
+                                <h5 className="card-title">{r.roomName}</h5>
+                                {/* <p>{r.description}</p> */}
+                                <small>{r.size}</small>
+                            </div>
+                            <div className="col-6">
+                                <p className="card-text">Rs. {r.price}</p>
+                                {/* <Link to={`/user/rooms/book/${r._id}`}>
+                                    <button className="btn btn-outline-dark">Book Now</button>
+                                </Link> */}
+                            </div>
+                            <div className="col-12">
+                            <p>{r.description}</p>
+                            </div>
+                            <div className="col-12">
+                                <Link to={`/user/rooms/book/${r._id}`}>
+                                    <button className="btn btn-outline-dark float-right">Book Now</button>
+                                </Link>
+                            </div>
+                        </div>
+                        {/* <h5 className="card-title">{r.roomName}</h5> */}
+                        {/* <small>{r.combinations[0].size}</small> */}
+                        {/* <p className="card-text">{r.description}</p> */}
+                        
                     </div>
+                    
+                    
                 </div>
             ))          
         }
@@ -54,6 +83,7 @@ const Rooms = () => {
         </Banner>
     </Hero>
     <RoomContainer></RoomContainer> */}
+    </div>
     </div>
     );
 };

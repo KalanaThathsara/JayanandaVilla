@@ -19,7 +19,7 @@ function AddRoom() {
         roomName: '',
         description: '',
         price: '',
-        category: '',
+        // category: '',
         size: 'XS',
         quantity: 0
     })
@@ -123,10 +123,10 @@ function AddRoom() {
                             {/* <div className="col-12">
                                 <SizeAqty />
                             </div> */}
-                            <div className="form-group col-6">
+                            {/* <div className="form-group col-6">
                                 <label htmlFor="category" className="col-5">Category</label> 
                                 <input onChange={onchange} value={roomData.category} className="form-control col-11" type="text" id="category" name="category"/>
-                            </div> 
+                            </div>  */}
                                 
                             <div className="form-group col-6">
                                 <label htmlFor="size" className="col-5">Size</label> 

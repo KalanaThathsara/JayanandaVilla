@@ -11,3 +11,11 @@
     font-weight: bold;
 
 }
+.formBook {
+  background-color: rgba(0,0, 0, 0.7);
+  border-radius: 20px;
+  padding: 5% 0 5% 0;
+  color: white;
+  font-weight: bold;
+
+}

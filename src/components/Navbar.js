@@ -3,6 +3,7 @@ import logo from '../images/logo.svg'
 import {FaAlignRight, FaCentercode} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
+import { toast } from "react-toastify";
 
 export default class Navbar extends Component {
 
@@ -28,24 +29,32 @@ export default class Navbar extends Component {
     //         console.log(err)
     //     }
     //   }
-
+    logout = () => {
+        localStorage.removeItem("token");
+        toast.dark("Logged Out Successfully");
+        // props.history.push("/");
+      };
     
     handleToggle = () =>{
         this.setState({isOpen: !this.state.isOpen})
     }
     render() {
         const jwt = localStorage.getItem('token')
-        let usern = jwt && jwtDecode(jwt).name.split(' ')[0]
+        let usern
+        if(jwt) {
+            usern = jwt ? jwtDecode(jwt).name.split(' ')[0] : ''
+        }
+        
         return (
         <nav className="navbar">
             <div className="nav-center">
                 <div className="nav-header">
                     <Link to="/">
                         {/* {<a href="url">Jayananda Estate Villa</a>} */}
-                        <h4>Jayananda State Villa</h4>
+                        <h4>Jayananda Estate Villa</h4>
                         {/* { <img src={logo} alt="Jayananda Estate Villa"></img>} */}
                     </Link>
-                    <button type="button" className="nav-btn" onClick={this.handleToggle}>
+                    <button type="box-button" className="nav-btn" onClick={this.handleToggle}>
                     <FaAlignRight className="nav-icon"></FaAlignRight>
                     </button>
                 </div>
@@ -63,12 +72,21 @@ export default class Navbar extends Component {
                         <Link to="">DayOut</Link>
                     </li>
                     <li>
-                        <Link to="">Gallery</Link>
+                        <Link to="/user/gallery">Gallery</Link>
                     </li>
-                    { usern ?  
+                    { usern ? 
+                        <> 
                         <li>
                             <Link>{usern}</Link>
-                        </li> :
+                        </li>
+                        <li>
+                            <Link onClick={this.logout}>
+                                <button className="btn btn-outline-dark">
+                                    Logout
+                                </button>
+                            </Link>
+                        </li>
+                        </> :
                     <>
                         <li>
                             <Link to="/user/login">LogIn</Link>
