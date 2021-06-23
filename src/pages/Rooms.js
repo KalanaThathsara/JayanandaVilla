@@ -59,7 +59,7 @@ const Rooms = () => {
                             <p>{r.description}</p>
                             </div>
                             <div className="col-12">
-                                <Link to={`/user/rooms/book/${r._id}`}>
+                                <Link to={`/user/rooms/book/${r._id}/${r.roomName}`}>
                                     <button className="btn btn-outline-dark float-right">Book Now</button>
                                 </Link>
                             </div>

@@ -29,11 +29,11 @@ function Sidebar() {
                         {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
                         </span>View Bookings</p>
             </Link>
-            <Link to="/admin/addroom">
-                <p onClick={onClick} id='add-room' style={(clicked == 'add-room') ? onClickStyle : s}>
+            <Link to="/admin/bookings-calendar">
+                <p onClick={onClick} id='calendar' style={(clicked == 'calendar') ? onClickStyle : s}>
                     <span style={{marginRight: 10}}>
                         {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
-                        </span>Add Room</p>
+                        </span>Bookings Calender</p>
             </Link>
             <Link to="/admin/CustomerDetails">
                 <p onClick={onClick} id='add-rehall' style={(clicked == 'add-rehall') ? onClickStyle : s}>
@@ -47,6 +47,20 @@ function Sidebar() {
                     <span style={{marginRight: 10}}>
                         {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
                         </span>Add DayOut</p>
+            </Link>
+            
+            <Link to="/admin/addroom">
+                <p onClick={onClick} id='add-room' style={(clicked == 'add-room') ? onClickStyle : s}>
+                    <span style={{marginRight: 10}}>
+                        {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+                        </span>Add Room</p>
+            </Link>
+            
+            <Link to="/admin/addpackage">
+                <p onClick={onClick} id='add-pkg' style={(clicked == 'add-pkg') ? onClickStyle : s}>
+                    <span style={{marginRight: 10}}>
+                        {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+                        </span>Add Package</p>
             </Link>
 
 

@@ -25,7 +25,7 @@ function CustomerView(props) {
     <Switch>
       
       <Route exact path="/user/rooms/" component={Rooms} />
-      <Route path="/user/rooms/book/:id" component={BookingRoom} />
+      <Route path="/user/rooms/book/:id/:name" component={BookingRoom} />
       <Route path="/user/rooms/:slug" component={SingleRoom} />
       <Route path="/user/login/" component={CustomerLogin}/>
       <Route path="/user/register/" component={RegisterCustomer}/>

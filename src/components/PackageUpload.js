@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import { toast } from "react-toastify";
 
-function RoomImageUpload(props) {
+function PackageUpload(props) {
 
     const onChange = e => {
         props.setFile(e.target.files[0])
@@ -20,7 +20,7 @@ function RoomImageUpload(props) {
     return (
         <div className="col-12 mb-2">
             <div className="row">
-                <p className="text-center">{props.name? props.name : 'Room Image'}</p>
+                <p className="text-center">Package PDF</p>
             </div>
 
             <div className="row mt-3">
@@ -51,4 +51,4 @@ function RoomImageUpload(props) {
     )
 }
 
-export default RoomImageUpload
+export default PackageUpload
