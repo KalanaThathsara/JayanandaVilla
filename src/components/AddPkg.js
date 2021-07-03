@@ -90,7 +90,7 @@ function AddRoom() {
     return (
         <div>
             <form className="container" autoComplete="off">
-                <h6 style={{backgroundColor: "blueviolet"}} className="pl-5 pt-1 pb-1 mb-5">Add Package</h6>
+                <h6 style={{backgroundColor: "gray"}} className="pl-5 pt-1 pb-1 mb-5">Add Package</h6>
                 
                 <div className="row">   
                     <div className="col-6">
