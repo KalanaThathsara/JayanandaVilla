@@ -16,6 +16,7 @@ import CustomerLogin from "./CustomerLogin";
 import Gallery from "./Gallery";
 import BookingRoom from "./BookingRoom";
 import ViewDayouts from "./ViewDayouts";
+import BookingDayout from "./BookingDayout";
 
 function CustomerView(props) {
   return (
@@ -28,7 +29,8 @@ function CustomerView(props) {
         <Route path="/user/rooms/:slug" component={SingleRoom} />
         <Route path="/user/login/" component={CustomerLogin} />
         <Route path="/user/register/" component={RegisterCustomer} />
-        <Route exact path="/user/dayouts" component={ViewDayouts} />
+        <Route path="/user/dayouts" component={ViewDayouts} />
+        <Route path="/user/dayout/book/:id/:name" component={BookingDayout} />
         <Route exact path="/user/gallery" component={Gallery} />
         <Route exact path="/user/" component={Home} />
         <Route component={Error} />

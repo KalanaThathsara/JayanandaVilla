@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 
 import getGallery from "../services/getDayoutsGallery";
 import ViewDayoutGalleryImage from "./ViewDayoutGalleryImage";
+import ViewDayoutPackages from "./ViewDayoutPackages";
+import ViewOnePackage from "./ViewOnePackage";
 
 function ViewDayouts() {
   const [images, setimages] = useState([]);
@@ -15,7 +18,7 @@ function ViewDayouts() {
   }, []);
 
   const backColor = {
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     color: "white",
     paddingTop: "50px",
     paddingBottom: "50px",
@@ -23,14 +26,25 @@ function ViewDayouts() {
 
   return (
     <div>
-      <div class="jumbotron jumbotron-fluid" style={backColor}>
-        <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
-          <p class="lead">
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
+      <div className="jumbotron jumbotron-fluid" style={backColor}>
+        <div className="container">
+          <h1 className="display-4">Dayouting</h1>
+          <p className="lead">
+            The Day Outing Packages of Jayananda Estate Villa offers numerous
+            choices that guarantee an eventful and enjoyable day for the guests.
+            It will be full of fun and enjoyable environment for everyone
+            whether it is a reunion with friends, team outing or family
+            get-together, we deliver the ideal packages for your requirement.
           </p>
         </div>
+      </div>
+      <div>
+        <Switch>
+          <Route exact path="/user/dayouts/:id" component={ViewOnePackage} />
+          <Route exact path="/user/dayouts" component={ViewDayoutPackages} />
+          <Route component={Error} />
+        </Switch>
+        {/* <ViewDayoutPackages /> */}
       </div>
 
       <div className="card-deck row">

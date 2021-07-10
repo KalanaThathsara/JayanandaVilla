@@ -1,25 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 // import './index.css';
-import {BrowserRouter as Router} from 'react-router-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {RoomProvider} from './context';
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+// import {RoomProvider} from './context';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
-  <RoomProvider>
-    <Router>
-      <App />
-    </Router>
-  </RoomProvider>,
+  // <RoomProvider>
+  <Router>
+    <App />
+  </Router>,
+  // </RoomProvider>
   document.getElementById("root")
-
-
-
- 
-
 );
 
 // If you want to start measuring performance in your app, pass a function
