@@ -18,16 +18,24 @@ function ViewDayouts() {
   }, []);
 
   const backColor = {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    // backgroundColor: "rgba(169,169,169)",
     color: "white",
     paddingTop: "50px",
     paddingBottom: "50px",
   };
 
+  const backColormain = {
+    // backgroundColor: "rgba(70,130,180)",
+  };
+
+  const paragraph = {
+    color: "rgba(0,0,0)",
+  };
+
   return (
-    <div>
+    <div className="dayout" style={backColormain}>
       <div className="jumbotron jumbotron-fluid" style={backColor}>
-        <div className="container">
+        <div className="container" style={paragraph}>
           <h1 className="display-4">Dayouting</h1>
           <p className="lead">
             The Day Outing Packages of Jayananda Estate Villa offers numerous

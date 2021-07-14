@@ -9,6 +9,7 @@ import BookingsCalender from "./BookingsCalender";
 import ViewCustomers from "./ViewCustomers";
 import AddDayout from "./AddDayout";
 import DayoutHome from "./DayoutHome";
+import Reports from "./Reports";
 
 function AdminPannel() {
   return (
@@ -30,6 +31,7 @@ function AdminPannel() {
               component={BookingsCalender}
             />
             <Route path="/admin/view-customers" component={ViewCustomers} />
+            <Route path="/admin/reports" component={Reports} />
             <Route path="/admin" component={AddRoom} />
           </Switch>
         </div>

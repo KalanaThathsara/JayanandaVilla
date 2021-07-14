@@ -99,7 +99,11 @@ function AddDayout() {
     <div>
       <form className="container" autoComplete="off">
         <h6
-          style={{ backgroundColor: "blueviolet" }}
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            textAlign: "center",
+          }}
           className="pl-5 pt-1 pb-1 mb-5"
         >
           Add Dayout Package

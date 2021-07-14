@@ -135,6 +135,18 @@ function Sidebar() {
           View Customers
         </p>
       </Link>
+      <Link to="/admin/reports">
+        <p
+          onClick={onClick}
+          id="reports"
+          style={clicked == "reports" ? onClickStyle : s}
+        >
+          <span style={{ marginRight: 10 }}>
+            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+          </span>
+          Reports
+        </p>
+      </Link>
     </div>
   );
 }

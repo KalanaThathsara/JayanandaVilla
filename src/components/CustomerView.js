@@ -17,6 +17,7 @@ import Gallery from "./Gallery";
 import BookingRoom from "./BookingRoom";
 import ViewDayouts from "./ViewDayouts";
 import BookingDayout from "./BookingDayout";
+import ChatBot from "./chatbot/Chatbot";
 
 function CustomerView(props) {
   return (
@@ -35,6 +36,7 @@ function CustomerView(props) {
         <Route exact path="/user/" component={Home} />
         <Route component={Error} />
       </Switch>
+      <ChatBot />
       {/* <RegisterCustomer />
     <CustomerLogin /> */}
     </>

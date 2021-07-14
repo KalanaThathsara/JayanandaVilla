@@ -25,11 +25,19 @@ const ViewDayoutPackages = () => {
     // setIsLoading(false)
   }, []);
 
+  const dayoutview = {
+    backgroundColor: "rgba(245,245,245)",
+  };
+
   return (
     <div className="card-deck row">
       {packages &&
         packages.map((r) => (
-          <div className="card col-3 m-5 p-3 rounded" key={r._id}>
+          <div
+            className="card col-3 m-5 p-3 rounded"
+            style={dayoutview}
+            key={r._id}
+          >
             {/* <img className="card-img-top" src={r.image} alt={r.roomName} /> */}
             <ViewDayoutImage roomNo={r._id} no="1" height="200" width="200" />
             <div className="card-body">
