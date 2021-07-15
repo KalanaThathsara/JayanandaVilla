@@ -18,6 +18,7 @@ import BookingRoom from "./BookingRoom";
 import ViewDayouts from "./ViewDayouts";
 import BookingDayout from "./BookingDayout";
 import ChatBot from "./chatbot/Chatbot";
+import ViewReceptionHalls from "./ViewReceptionHalls";
 
 function CustomerView(props) {
   return (
@@ -31,6 +32,7 @@ function CustomerView(props) {
         <Route path="/user/login/" component={CustomerLogin} />
         <Route path="/user/register/" component={RegisterCustomer} />
         <Route path="/user/dayouts" component={ViewDayouts} />
+        <Route path="/user/receptionhall" component={ViewReceptionHalls} />
         <Route path="/user/dayout/book/:id/:name" component={BookingDayout} />
         <Route exact path="/user/gallery" component={Gallery} />
         <Route exact path="/user/" component={Home} />

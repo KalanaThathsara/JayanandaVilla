@@ -8,6 +8,7 @@ import BookedCalender from "./BookedCalender";
 import bookDayoutPackage from "../services/addDayoutBooking";
 import getOneDayoutPackages from "../services/getOneDayoutPackage";
 import data from "../data";
+import DayoutBookedCalender from "./DayoutsBookedCalender";
 
 function BookingDayout(props) {
   const [roomData, setroomData] = useState({});
@@ -199,7 +200,7 @@ function BookingDayout(props) {
                           </div>
                           <div className="col-6 mt-5">
                             Current Bookings
-                            {/* <BookedCalender roomID={props.match.params.id} /> */}
+                            <DayoutBookedCalender />
                           </div>
                         </>
                       ) : (
