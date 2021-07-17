@@ -38,15 +38,17 @@ export default class Navbar extends Component {
   render() {
     const jwt = localStorage.getItem("token");
     let usern;
+    let userID;
     if (jwt) {
       usern = jwt ? jwtDecode(jwt).name.split(" ")[0] : "";
+      userID = jwt ? jwtDecode(jwt)._id : " ";
     }
 
     return (
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <Link to="/">
+            <Link to="/user">
               {/* {<a href="url">Jayananda Estate Villa</a>} */}
               <h4>Jayananda Estate Villa</h4>
               {/* { <img src={logo} alt="Jayananda Estate Villa"></img>} */}
@@ -61,7 +63,7 @@ export default class Navbar extends Component {
           </div>
           <ul className={this.state.isOpen ? "nav-linksshow-nav" : "nav-links"}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/user">Home</Link>
             </li>
             <li>
               <Link to="/user/rooms">Rooms</Link>
@@ -78,7 +80,7 @@ export default class Navbar extends Component {
             {usern ? (
               <>
                 <li>
-                  <Link>{usern}</Link>
+                  <Link to={`/user/bookings/${userID}`}>{usern}</Link>
                 </li>
                 <li>
                   <Link onClick={this.logout}>

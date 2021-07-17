@@ -1,21 +1,22 @@
 .back {
-    background: url("../images/defaultBcg.jpg") center/cover no-repeat;
-    height: "1000px";
-  } 
+  background: url("../images/defaultBcg.jpg") center/cover no-repeat;
+  /* height: "1000px"; */
+  height: "1000px";
+  /* margin-bottom: 0%;
+  background-color: green; */
+}
 
 .form {
-    background-color: rgba(0,0, 0, 0.3);
-    border-radius: 20px;
-    padding: 5% 0 5% 0;
-    color: white;
-    font-weight: bold;
-
-}
-.formBook {
-  background-color: rgba(0,0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 5% 0 5% 0;
   color: white;
   font-weight: bold;
-
+}
+.formBook {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 5% 0 5% 0;
+  color: white;
+  font-weight: bold;
 }

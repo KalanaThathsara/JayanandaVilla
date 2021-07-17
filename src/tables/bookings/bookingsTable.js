@@ -48,8 +48,10 @@ export const BookingsTable = () => {
     let books = [];
     records.forEach((r) => {
       let oneBook = {
+        _id: r._id,
         date: new Date(r.timeStamp).toLocaleDateString(),
         time: new Date(r.timeStamp).toLocaleTimeString(),
+        status: r.status,
         room: r.room.roomName,
         size: r.room.size,
         dates: [],
@@ -143,7 +145,6 @@ export const BookingsTable = () => {
           <table
             className="table table-dark table-hover table-responsive"
             {...getTableProps()}
-            responsive
             style={{ height: "200px" }}
           >
             <thead style={{ textAlign: "center" }}>

@@ -19,6 +19,10 @@ import ViewDayouts from "./ViewDayouts";
 import BookingDayout from "./BookingDayout";
 import ChatBot from "./chatbot/Chatbot";
 import ViewReceptionHalls from "./ViewReceptionHalls";
+import UserBookings from "./UserBookings";
+import ViewOneReceptionPDF from "./ViewOneReceptionPDF";
+import BookingReception from "./BookingReception";
+import RegisterCustomerWValid from "./RegisterCustomerWValid";
 
 function CustomerView(props) {
   return (
@@ -30,12 +34,18 @@ function CustomerView(props) {
         <Route path="/user/rooms/book/:id/:name" component={BookingRoom} />
         <Route path="/user/rooms/:slug" component={SingleRoom} />
         <Route path="/user/login/" component={CustomerLogin} />
-        <Route path="/user/register/" component={RegisterCustomer} />
+        <Route path="/user/register/" component={RegisterCustomerWValid} />
         <Route path="/user/dayouts" component={ViewDayouts} />
         <Route path="/user/receptionhall" component={ViewReceptionHalls} />
+        <Route
+          path="/user/receptionhalls/book/:id/:name"
+          component={BookingReception}
+        />
+        {/* <Route path="/user/receptionhall/one" component={ViewOneReceptionPDF} /> */}
         <Route path="/user/dayout/book/:id/:name" component={BookingDayout} />
         <Route exact path="/user/gallery" component={Gallery} />
-        <Route exact path="/user/" component={Home} />
+        <Route exact path="/user/bookings/:id" component={UserBookings} />
+        <Route exact path="/user/gallery" component={Home} />
         <Route component={Error} />
       </Switch>
       <ChatBot />

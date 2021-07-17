@@ -45,18 +45,17 @@ function Sidebar() {
           Bookings Calender
         </p>
       </Link>
-      <Link to="/admin/CustomerDetails">
+      {/* <Link to="/admin/CustomerDetails">
         <p
           onClick={onClick}
           id="add-rehall"
           style={clicked == "add-rehall" ? onClickStyle : s}
         >
           <span style={{ marginRight: 10 }}>
-            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
           </span>
           Add ReceptionHall
         </p>
-      </Link>
+      </Link> */}
 
       <Link to="/admin/dayout">
         <p
@@ -103,10 +102,19 @@ function Sidebar() {
           id="add-pkg"
           style={clicked == "add-pkg" ? onClickStyle : s}
         >
-          <span style={{ marginRight: 10 }}>
-            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
-          </span>
+          <span style={{ marginRight: 10 }}></span>
           Add Package
+        </p>
+      </Link>
+
+      <Link to="/admin/add-reception-hall">
+        <p
+          onClick={onClick}
+          id="add-rec"
+          style={clicked == "add-rec" ? onClickStyle : s}
+        >
+          <span style={{ marginRight: 10 }}></span>
+          Add Reception Hall
         </p>
       </Link>
 

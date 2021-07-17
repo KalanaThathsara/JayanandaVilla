@@ -10,6 +10,7 @@ import ViewCustomers from "./ViewCustomers";
 import AddDayout from "./AddDayout";
 import DayoutHome from "./DayoutHome";
 import Reports from "./Reports";
+import AddReceptionHall from "./AddReceptionHall";
 
 function AdminPannel() {
   return (
@@ -26,6 +27,10 @@ function AdminPannel() {
             <Route path="/admin/dayout" component={DayoutHome} />
             <Route path="/admin/addgallery" component={AddGallery} />
             <Route path="/admin/view-bookings" component={ViewBookings} />
+            <Route
+              path="/admin/add-reception-hall"
+              component={AddReceptionHall}
+            />
             <Route
               path="/admin/bookings-calendar"
               component={BookingsCalender}

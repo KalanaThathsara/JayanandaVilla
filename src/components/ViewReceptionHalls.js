@@ -52,7 +52,7 @@ function ViewReceptionHalls() {
         <Switch>
           <Route
             exact
-            path="/user/receptionhall/:name"
+            path="/user/receptionhall/:id"
             component={ViewOneRecepPackage}
           />
           <Route

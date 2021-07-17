@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import RoomContainer from "../components/RoomContainer";
 import "../css/loginRegiser.css";
 
-import getReceptionPackages from "../services/getReceptionHalls";
-import ViewRoomImage from "../components/ViewRoomImage";
-import ViewDayoutImage from "./ViewDayoutImage";
+import getReceptionPackages from "../services/getReceptionPackages";
+import ViewReceptionImage from "./ViewReceptionImage";
 
 const ViewReceptionPackages = () => {
   const [packages, setpackages] = useState([]);
@@ -39,34 +38,40 @@ const ViewReceptionPackages = () => {
             key={r._id}
           >
             {/* <img className="card-img-top" src={r.image} alt={r.roomName} /> */}
-            {/* <ViewDayoutImage roomNo={r._id} no="1" height="200" width="200" /> */}
+            <ViewReceptionImage
+              roomNo={r._id}
+              no="1"
+              height="200"
+              width="200"
+            />
             <div className="card-body">
               <div className="row">
                 <div className="col-6">
-                  <h5 className="card-title">{r.name}</h5>
+                  <h5 className="card-title">{r.packageName}</h5>
+                  {/* <p>{r.description}</p> */}
                   <small>{r.packageNo}</small>
                 </div>
                 <div className="col-6">
-                  {/* <p className="card-text">Price - Rs. {r.price}</p> */}
+                  {/* <p className="card-text">Child - Rs. {r.cprice}</p> */}
+                  <p className="card-text">Plate - Rs. {r.aprice}</p>
+                  {/* <Link to={`/user/rooms/book/${r._id}`}>
+                                    <button className="btn btn-outline-dark">Book Now</button>
+                                </Link> */}
                 </div>
-                <div className="col-12">
+                {/* <div className="col-12">
                   <p>{r.description}</p>
-                </div>
-                <div className="col-12 text-center">
-                  {/* <a
-                    href={`D:/Projects/Development%20Project/jayanandavilla-backend/packagesPDFs/${r.name}.pdf`}
-                    target="_blank"
-                  >
-                    <p>View</p>
-                  </a> */}
-                  <a
-                    href="http://file:///D:/Projects/Development%20Project/jayanandavilla-backend/packagesPDFs/ddddddddddddds.pdf"
-                    target="_blank"
-                  >
-                    <h5>SLAAS Main Site</h5>
-                  </a>
+                </div> */}
+                <div className="col-12">
+                  <Link to={`/user/receptionhall/${r._id}`}>
+                    <button className="btn btn-outline-dark float-right">
+                      View
+                    </button>
+                  </Link>
                 </div>
               </div>
+              {/* <h5 className="card-title">{r.roomName}</h5> */}
+              {/* <small>{r.combinations[0].size}</small> */}
+              {/* <p className="card-text">{r.description}</p> */}
             </div>
           </div>
         ))}

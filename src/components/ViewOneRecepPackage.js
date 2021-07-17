@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import getOneDayoutPackages from "../services/getOneDayoutPackage";
-import ViewDayoutImage from "./ViewDayoutImage";
+import getOneRecepPackages from "../services/getOneRecepPackage";
+import ViewReceptionImage from "./ViewReceptionImage";
 
 function ViewOneRecepPackage(props) {
   const [packageD, setpackage] = useState({});
   useEffect(() => {
     async function fetchData() {
-      const re = await getOneDayoutPackages(props.match.params.id);
+      const re = await getOneRecepPackages(props.match.params.id);
       setpackage(re);
       console.log("one pkg", re);
     }
@@ -21,7 +21,7 @@ function ViewOneRecepPackage(props) {
       <h6 className="mt-4">Package No : {packageD.packageNo}</h6>
       <div className="row mt-5">
         <div className="col-4">
-          <ViewDayoutImage
+          <ViewReceptionImage
             roomNo={packageD._id}
             no="1"
             height="200"
@@ -29,7 +29,7 @@ function ViewOneRecepPackage(props) {
           />
         </div>
         <div className="col-4">
-          <ViewDayoutImage
+          <ViewReceptionImage
             roomNo={packageD._id}
             no="2"
             height="200"
@@ -37,7 +37,7 @@ function ViewOneRecepPackage(props) {
           />
         </div>
         <div className="col-4">
-          <ViewDayoutImage
+          <ViewReceptionImage
             roomNo={packageD._id}
             no="3"
             height="200"
@@ -69,15 +69,14 @@ function ViewOneRecepPackage(props) {
           })}
       </ul>
       <div className="row">
-        <div className="col-2">Adults - Rs.{packageD.aprice}</div>
-        <div className="col-3">Childs (8-12 Years) - Rs.{packageD.cprice}</div>
+        <div className="col-2">Per Plate - Rs.{packageD.aprice}</div>
       </div>
       {/* <canter> */}
       <div className="row mt-5 mb-5 text-center">
         <div className="col-4"></div>
         <div className="col-4">
           <Link
-            to={`/user/dayout/book/${packageD._id}/${packageD.packageName}`}
+            to={`/user/receptionhalls/book/${packageD._id}/${packageD.packageName}`}
           >
             <button className="btn btn-outline-dark" width="100%">
               Book Now
