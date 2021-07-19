@@ -11,6 +11,11 @@ import AddDayout from "./AddDayout";
 import DayoutHome from "./DayoutHome";
 import Reports from "./Reports";
 import AddReceptionHall from "./AddReceptionHall";
+import ViewOneRoomBooking from "./ViewOneRoomBooking";
+import ViewDayoutBookings from "./ViewDayoutBookings";
+import ViewReceptionBookings from "./ViewReceptionBookings";
+import ViewOneDayoutBooking from "./ViewOneDayoutBooking";
+import ViewOneReceptionBooking from "./ViewOneReceptionBookings";
 
 function AdminPannel() {
   return (
@@ -27,6 +32,26 @@ function AdminPannel() {
             <Route path="/admin/dayout" component={DayoutHome} />
             <Route path="/admin/addgallery" component={AddGallery} />
             <Route path="/admin/view-bookings" component={ViewBookings} />
+            <Route
+              path="/admin/view-one-room-book/:id"
+              component={ViewOneRoomBooking}
+            />
+            <Route
+              path="/admin/view-dayout-bookings"
+              component={ViewDayoutBookings}
+            />
+            <Route
+              path="/admin/view-one-dayout-book/:id"
+              component={ViewOneDayoutBooking}
+            />
+            <Route
+              path="/admin/view-reception-bookings"
+              component={ViewReceptionBookings}
+            />
+            <Route
+              path="/admin/view-one-reception-book/:id"
+              component={ViewOneReceptionBooking}
+            />
             <Route
               path="/admin/add-reception-hall"
               component={AddReceptionHall}

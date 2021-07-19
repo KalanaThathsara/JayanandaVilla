@@ -19,7 +19,7 @@ export const COLUMNS = [
       // }
 
       return (
-        <Link to={`/admin/view-one-room-book/${bookingID}`}>
+        <Link to={`/admin/view-one-dayout-book/${bookingID}`}>
           <button
             className="btn btn-outline-primary"
             onClick={() => onDeliver(bookingID)}
@@ -30,39 +30,46 @@ export const COLUMNS = [
       );
     },
   },
+
+  // {
+  //   Header: "Status",
+  //   accessor: "status",
+  //   Filter: ColumnFilter,
+  // },
   {
-    Header: "Booked Date",
-    accessor: "date",
+    Header: "Package No",
+    accessor: "packageNo",
     Filter: ColumnFilter,
   },
   {
-    Header: "Booked Time",
-    accessor: "time",
-    Filter: ColumnFilter,
-  },
-  {
-    Header: "Status",
-    accessor: "status",
-    Filter: ColumnFilter,
-  },
-  {
-    Header: "Room",
-    accessor: "room",
-    Filter: ColumnFilter,
-  },
-  {
-    Header: "Dates",
-    accessor: "dates",
+    Header: "Package",
+    accessor: "package",
     Filter: ColumnFilter,
     style: {
       width: "20%",
     },
   },
   {
+    Header: "Booking Date",
+    accessor: "bookDate",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Adults",
+    accessor: "adults",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Childs",
+    accessor: "childs",
+    Filter: ColumnFilter,
+  },
+  {
     Header: "Total Amount",
     accessor: "total",
     Filter: ColumnFilter,
   },
+
   {
     Header: "Customer Name",
     accessor: "customer",
@@ -76,6 +83,16 @@ export const COLUMNS = [
   {
     Header: "Email",
     accessor: "email",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Date",
+    accessor: "date",
+    Filter: ColumnFilter,
+  },
+  {
+    Header: "Time",
+    accessor: "time",
     Filter: ColumnFilter,
   },
   // {

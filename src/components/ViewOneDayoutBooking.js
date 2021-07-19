@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import getOneBooking from "../services/getOneBooking";
 import addRoomRemark from "../services/addRoomRemark";
 
-function ViewOneRoomBooking(props) {
+function ViewOneDayoutBooking(props) {
   const [bookings, setbookings] = useState({});
   const [remarks, setremarks] = useState("");
   const [amount, setamount] = useState("");
   async function fetchData() {
     try {
-      let result = await getOneBooking("room", props.match.params.id);
+      let result = await getOneBooking("dayout", props.match.params.id);
       setbookings(result);
       console.log("One Booking", result);
     } catch (e) {
@@ -22,25 +22,30 @@ function ViewOneRoomBooking(props) {
   }, []);
 
   const addRe = async () => {
-    await addRoomRemark("room", {
+    await addRoomRemark("dayout", {
       room: props.match.params.id,
       remark: remarks,
       amount: amount,
     });
+    setamount("");
+    setremarks("");
+    fetchData();
   };
 
   return (
     <div className="container">
-      <h4 className="text-center mb-5">Booking Details</h4>
+      <h2>Dayout Booking Details</h2>
       <div className="row">
         <div className="col-3"></div>
         <>
           <div className="col-3">
             <p>Date</p>
             <p>Customer</p>
-            <p>Room No</p>
-            <p>Room</p>
-            <p>Booked Dates</p>
+            <p>Package No</p>
+            <p>Package</p>
+            <p>Booked Date</p>
+            <p>Adults</p>
+            <p>Childs</p>
             <p>Total</p>
             <label>Remarks</label>
           </div>
@@ -50,15 +55,12 @@ function ViewOneRoomBooking(props) {
                 new Date(bookings.timeStamp).toLocaleDateString()}
             </p>
             <p>{bookings.customer && bookings.customer.username}</p>
-            <p>{bookings.room && bookings.room.roomNo}</p>
-            <p>{bookings.room && bookings.room.roomName}</p>
-            <p>
-              {bookings.dates &&
-                bookings.dates
-                  .map((d) => new Date(d).toLocaleDateString())
-                  .toString()}
-            </p>
-            <p>Rs. {bookings.subtotal && bookings.subtotal}</p>
+            <p>{bookings.package && bookings.package.packageNo}</p>
+            <p>{bookings.package && bookings.package.packageName}</p>
+            <p>{new Date(bookings.date).toLocaleDateString()}</p>
+            <p>{bookings.numOfPersons && bookings.numOfPersons.adults}</p>
+            <p>{bookings.numOfPersons && bookings.numOfPersons.childs}</p>
+            <p>Rs. {bookings.total && bookings.total}</p>
 
             <input
               type="text"
@@ -81,4 +83,4 @@ function ViewOneRoomBooking(props) {
   );
 }
 
-export default ViewOneRoomBooking;
+export default ViewOneDayoutBooking;

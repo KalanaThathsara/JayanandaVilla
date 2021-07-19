@@ -21,18 +21,6 @@ function Sidebar() {
 
   return (
     <div className="sidenav">
-      <Link to="/admin/view-bookings">
-        <p
-          onClick={onClick}
-          id="view-books"
-          style={clicked == "view-books" ? onClickStyle : s}
-        >
-          <span style={{ marginRight: 10 }}>
-            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
-          </span>
-          View Bookings
-        </p>
-      </Link>
       <Link to="/admin/bookings-calendar">
         <p
           onClick={onClick}
@@ -45,6 +33,43 @@ function Sidebar() {
           Bookings Calender
         </p>
       </Link>
+      <Link to="/admin/view-bookings">
+        <p
+          onClick={onClick}
+          id="view-books"
+          style={clicked == "view-books" ? onClickStyle : s}
+        >
+          <span style={{ marginRight: 10 }}>
+            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+          </span>
+          Room Bookings
+        </p>
+      </Link>
+      <Link to="/admin/view-dayout-bookings">
+        <p
+          onClick={onClick}
+          id="view-d-books"
+          style={clicked == "view-d-books" ? onClickStyle : s}
+        >
+          <span style={{ marginRight: 10 }}>
+            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+          </span>
+          Dayout Bookings
+        </p>
+      </Link>
+      <Link to="/admin/view-reception-bookings">
+        <p
+          onClick={onClick}
+          id="view-r-books"
+          style={clicked == "view-r-books" ? onClickStyle : s}
+        >
+          <span style={{ marginRight: 10 }}>
+            {/* <FontAwesomeIcon icon={faPlusCircle} size="2x"/> */}
+          </span>
+          Reception Bookings
+        </p>
+      </Link>
+
       {/* <Link to="/admin/CustomerDetails">
         <p
           onClick={onClick}
@@ -96,7 +121,7 @@ function Sidebar() {
         </p>
       </Link>
 
-      <Link to="/admin/addpackage">
+      {/* <Link to="/admin/addpackage">
         <p
           onClick={onClick}
           id="add-pkg"
@@ -105,7 +130,7 @@ function Sidebar() {
           <span style={{ marginRight: 10 }}></span>
           Add Package
         </p>
-      </Link>
+      </Link> */}
 
       <Link to="/admin/add-reception-hall">
         <p

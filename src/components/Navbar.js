@@ -45,7 +45,7 @@ export default class Navbar extends Component {
     }
 
     return (
-      <nav className="navbar">
+      <nav className="navbar" style={{ marginTop: "0px" }}>
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/user">

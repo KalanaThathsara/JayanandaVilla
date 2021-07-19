@@ -18,9 +18,11 @@ function UserBookings(props) {
 
   const cancelDayoutBook = async (id) => {
     await cancelDayout("dayout", id);
+    await fetchData();
   };
   const cancelRoomBook = async (id) => {
     await cancelDayout("room", id);
+    await fetchData();
   };
 
   return (
@@ -53,7 +55,7 @@ function UserBookings(props) {
                   <td className={b.status == "Canceled" && "text-danger"}>
                     {b.status && b.status}
                   </td>
-                  <td>{b.reamrks && b.reamrks}</td>
+                  <td>{b.remarks && b.remarks.toString()}</td>
                   <td>
                     {b.status != "Canceled" && (
                       <button
@@ -99,7 +101,7 @@ function UserBookings(props) {
                   <td className={b.status == "Canceled" && "text-danger"}>
                     {b.status && b.status}
                   </td>
-                  <td>{b.reamrks && b.reamrks}</td>
+                  <td>{b.remarks && b.remarks.toString()}</td>
                   <td>
                     {b.status != "Canceled" && (
                       <button
